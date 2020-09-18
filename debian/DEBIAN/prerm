@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Get the Real Username
+RUID=$(who | awk 'FNR == 1 {print $1}')
+
+# Translate Real Username to Real User ID
+RUSER_UID=$(id -u ${RUID})
+
+# Set env for the Real User
+if [[ -f "/home/${RUSER_UID}/.zshrc" ]] ; then
+    rm -f "/home/${RUSER_UID}/.zshrc"
+fi
+
+function delKeyboardShortcut() {
+    IFS=', ' read -r -a array <<< `sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings get org.cinnamon.desktop.keybindings custom-list | tr -d '[' | tr -d ']'`
+
+    # array pop
+    unset 'array[${#array[@]}-1]'
+    function join { local IFS="$1"; shift; echo "$*"; }
+    result=$(join , ${array[@]})    
+    result="[${result}]"
+    # echo $result
+
+    sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings set org.cinnamon.desktop.keybindings custom-list "${result}"
+
+}
+
+delKeyboardShortcut
+
+if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-deconfigure" ] || [ "$1" = "abort-remove" ] ; then
+        if which update-icon-caches >/dev/null 2>&1 ; then
+                update-icon-caches /usr/share/icons
+        fi
+fi
+
+#DEBHELPER#
+exit 0

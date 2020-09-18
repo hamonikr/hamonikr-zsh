@@ -1,0 +1,14 @@
+Package: hamonikr-zsh
+Version: 1.0.0
+Architecture: amd64
+Maintainer: Kevin Kim <chaeya@gmail.com>
+Installed-Size: 27848
+Pre-Depends: dpkg (>= 1.15.6)
+Depends: git, powerline, fonts-powerline, zsh-theme-powerlevel9k, python-powerline
+Recommends: 
+Section: utils
+Priority: optional
+Homepage: https://hamonikr.org
+Description: zsh for HamoniKR User
+ This script provide install zsh and plugins.
+
