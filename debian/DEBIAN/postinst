@@ -7,9 +7,9 @@ RUID=$(who | awk 'FNR == 1 {print $1}')
 RUSER_UID=$(id -u ${RUID})
 
 # Set env for the Real User
-touch /home/${RUSER_UID}/.zshrc
-if [[ -f "/home/${RUSER_UID}/.zshrc" ]] ; then
-    echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> "/home/${RUSER_UID}/.zshrc"
+touch /home/${RUID}/.zshrc
+if [[ -f "/home/${RUID}/.zshrc" ]] ; then
+    echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> "/home/${RUID}/.zshrc"
 fi
 
 # 단축키를 자동으로 추가하는 기능
