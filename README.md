@@ -34,8 +34,21 @@ Zsh은 선택지가 여러 개일 때 간단한 설명도 함께 보여주고 �
  * zsh-theme-powerlevel9k 테마 기본 설치
  * <CTRL><ALT>Z 단축키로 실행
 
-## 프로그램 설치
+## 프로그램 설치 (Ubuntu 18.04, 하모니카 1.4, 하모니카 3.0)
 
+하모니카 사용자는 `apt 저장소 추가 단계`가 필요없습니다.
+
+1) 하모니카 apt 저장소를 추가하고 업데이트
+```
+wget -O - http://apt.hamonikr.org/hamonikr.key | sudo apt-key add -
+sudo bash -c "echo 'deb https://apt.hamonikr.org sun main upstream' > /etc/apt/sources.list.d/hamonikr-sun.list"
+
+sudo apt-get update
+```
+
+2) 프로그램 설치.
+
+터미널을 열고 다음과 같이 입력하세요.
 ```
 sudo apt install hamonikr-zsh
 ```
