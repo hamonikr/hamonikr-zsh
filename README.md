@@ -32,7 +32,7 @@ Zsh은 선택지가 여러 개일 때 간단한 설명도 함께 보여주고 �
  * zsh 기본 터미널과 필요한 플러그인 자동 설치
  * powerline fonts 포함
  * zsh-theme-powerlevel9k 테마 기본 설치
- * <CTRL><ALT>Z 단축키로 실행
+ * `CTRL + ALT + Z` 단축키로 실행
 
 ## 프로그램 설치 (Ubuntu 18.04, 하모니카 1.4, 하모니카 3.0)
 
