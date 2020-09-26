@@ -40,10 +40,7 @@ Zsh은 선택지가 여러 개일 때 간단한 설명도 함께 보여주고 �
 
 1) 하모니카 apt 저장소를 추가하고 업데이트
 ```
-wget -O - http://apt.hamonikr.org/hamonikr.key | sudo apt-key add -
-sudo bash -c "echo 'deb https://apt.hamonikr.org sun main upstream' > /etc/apt/sources.list.d/hamonikr-sun.list"
-
-sudo apt-get update
+curl -sL https://apt.hamonikr.org/setup_hamonikr.sun | sudo -E bash -
 ```
 
 2) 프로그램 설치.
