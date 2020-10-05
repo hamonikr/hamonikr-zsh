@@ -10,6 +10,7 @@ RUSER_UID=$(id -u ${RUID})
 touch /home/${RUID}/.zshrc
 if [[ -f "/home/${RUID}/.zshrc" ]] ; then
     echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> "/home/${RUID}/.zshrc"
+    sudo chown ${RUID}:${RUID} /home/${RUID}/.zshrc
 fi
 
 # 단축키를 자동으로 추가하는 기능
