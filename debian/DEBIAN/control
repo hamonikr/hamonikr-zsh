@@ -1,10 +1,10 @@
 Package: hamonikr-zsh
-Version: 1.0.3
+Version: 1.1.0
 Architecture: amd64
 Maintainer: Kevin Kim <chaeya@gmail.com>
 Installed-Size: 27848
 Pre-Depends: dpkg (>= 1.15.6)
-Depends: git, powerline, fonts-powerline, zsh-theme-powerlevel9k, python-powerline
+Depends: git, powerline, powerline, fonts-powerline, zsh-theme-powerlevel9k, python3-powerline
 Recommends: 
 Section: utils
 Priority: optional
