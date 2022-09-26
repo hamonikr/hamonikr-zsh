@@ -1,0 +1,13 @@
+hamonikr-zsh (2.0.0) taeback; urgency=medium
+
+  * Release for HamoniKR 6.0 taeback
+   - Oh My Zsh
+   - zsh-theme-powerlevel9k
+   - Using Hack Regular Nerd Font Complete
+   - autojump : 디렉터리를 이동을 j 명령을 통해서 한번에 이동 가능.
+   - autosuggestion : 최근에 입력한 명령어를 방향키로 빠르게 완성.
+   - syntax-highlighting : 명령어와 미리보기 등을 구분하기 쉽게 색상 표시.
+   - bash-completion : 탭키를 이용한 명령어 자동 완성 기능.
+   - Useful Alias : 자주 사용하는 명령어 축약 기능.
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 26 Sep 2022 15:16:46 +0900

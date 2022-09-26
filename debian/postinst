@@ -1,0 +1,179 @@
+#!/usr/bin/env bash
+# 
+# Copyright HamoniKR Team. All rights reserved.
+# See LICENSE.md in the project root for license information.
+
+# Register apt repository
+eval $(apt-config shell APT_SOURCE_PARTS Dir::Etc::sourceparts/d)
+HAMONIKR_SOURCE_PART=${APT_SOURCE_PARTS}hamonikr-pkg.list
+
+eval $(apt-config shell APT_TRUSTED_PARTS Dir::Etc::trustedparts/d)
+HAMONIKR_TRUSTED_PART=${APT_TRUSTED_PARTS}hamonikr.gpg
+
+# Install repository source list
+WRITE_SOURCE=0
+if [ ! -f $HAMONIKR_SOURCE_PART ] ; then
+    # Write source list if it does not exist
+    WRITE_SOURCE=1
+elif grep -Eq "http:\/\/repo\.hamonikr\.org" $HAMONIKR_SOURCE_PART; then
+    # Migrate from old repository
+    WRITE_SOURCE=1
+elif grep -q "# disabled on upgrade to" $HAMONIKR_SOURCE_PART; then
+    # Write source list if it was disabled by OS upgrade
+    WRITE_SOURCE=1
+fi
+
+if [ "$WRITE_SOURCE" -eq "1" ]; then
+	echo "### THIS FILE IS AUTOMATICALLY CONFIGURED ###
+deb [arch=amd64] https://repo.hamonikr.org jammy main extra" > $HAMONIKR_SOURCE_PART
+
+    # Sourced from https://repo.hamonikr.org/hamonikr-pkg.key
+    if [ ! -f $HAMONIKR_TRUSTED_PART ]; then
+        echo "-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: GnuPG v1.4.7 (GNU/Linux)
+
+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
+=jMj1
+-----END PGP PUBLIC KEY BLOCK-----
+" | gpg --dearmor > $HAMONIKR_TRUSTED_PART
+    fi
+fi
+
+# Settins for applications
+
+# Get the Real Username
+RUID=$(who | awk 'FNR == 1 {print $1}')
+
+# Translate Real Username to Real User ID
+RUSER_UID=$(id -u ${RUID})
+
+touch /home/${RUID}/.zshrc
+if [[ -f "/home/${RUID}/.zshrc" ]] ; then
+    cat >> "/home/${RUID}/.zshrc" <<'EOL'
+# Prompt settings
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_COLOR_SCHEME="light"
+POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND="slateblue1"
+POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND="white"
+
+EOL
+
+    # powerlevel9k.zsh-theme
+    if [[ -f "/usr/share/powerlevel9k/powerlevel9k.zsh-theme" ]] ; then
+        echo "source /usr/share/powerlevel9k/powerlevel9k.zsh-theme" >> "/home/${RUID}/.zshrc"
+    fi
+
+    # autojump
+    if [[ -f "/usr/share/autojump/autojump.sh" ]] ; then
+        echo "source /usr/share/autojump/autojump.sh" >> "/home/${RUID}/.zshrc"
+    fi
+
+    # zsh-autosuggestions
+    if [[ -f "/usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh" ]] ; then
+        echo "source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh" >> "/home/${RUID}/.zshrc"
+    fi
+
+    # zsh-syntax-highlighting
+    if [[ -f "/usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" ]] ; then
+        echo "source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> "/home/${RUID}/.zshrc"
+    fi
+
+    # bash_completion
+    if [[ -f "/usr/share/bash-completion/bash_completion" ]] ; then
+        echo "autoload -U +X compinit && compinit" >> "/home/${RUID}/.zshrc"
+        echo "autoload -U +X bashcompinit && bashcompinit" >> "/home/${RUID}/.zshrc"
+        echo "source /usr/share/bash-completion/bash_completion  &>/dev/null" >> "/home/${RUID}/.zshrc"
+    fi
+    
+    # Alias
+    cat >> "/home/${RUID}/.zshrc" <<'EOL'
+
+# dircolors
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+# Alias    
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias myip='curl http://ipecho.net/plain; echo'
+alias apt='sudo apt'
+alias apu='sudo apt update'
+alias code='code --no-sandbox'
+alias df='df -h'
+alias lt='ls --human-readable --size -1 -S --classify'
+alias left='ls -t -1'
+alias count='find . -type f | wc -l'
+alias cpv='rsync -ah --info=progress2'
+
+EOL
+
+    # for VSCODE
+    if ! dpkg -s "code" >/dev/null 2>&1; then
+        cat > ~/.config/Code/User/settings.json <<EOF
+{
+    "terminal.integrated.fontFamily": "\"Hack Nerd Font\"",
+    "terminal.integrated.fontSize": 13
+    
+}
+EOF
+    fi
+
+    fc-cache -frv || true
+    sudo chown ${RUID}:${RUID} /home/${RUID}/.zshrc
+    chsh -s /bin/zsh ${RUID}
+fi
