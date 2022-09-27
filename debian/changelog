@@ -1,4 +1,12 @@
-hamonikr-zsh (2.0.0) taeback; urgency=medium
+hamonikr-zsh (2.0.1) jammy; urgency=low
+
+  * Release for HamoniKR 6.0 taeback
+   - hamonikr-pkg.list -> hamonikr-app.list
+   - Fixed wrong font path
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 26 Sep 2022 18:47:39 +0900
+
+hamonikr-zsh (2.0.0) jammy; urgency=low
 
   * Release for HamoniKR 6.0 taeback
    - Oh My Zsh

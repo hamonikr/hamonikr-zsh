@@ -7,13 +7,13 @@ Standards-Version: 3.9.5
 
 Package: hamonikr-zsh
 Architecture: amd64
-Depends: 
-Recommends: git,
-            powerline,
-            zsh-theme-powerlevel9k,
-            python3-powerline,
-            autojump,
-            zsh-autosuggestions,
-            zsh-syntax-highlighting
+Depends: git,
+         powerline,
+         zsh-theme-powerlevel9k,
+         python3-powerline,
+         autojump,
+         zsh-autosuggestions,
+         zsh-syntax-highlighting
+Recommends:
 Description: Default Terminal and Shell for HamoniKR
- 하모니카 OS의 기본 터미널 설정 도구.
+ 하모니카 OS의 기본 터미널 설정을 ZSH 로 변경하는 패키지.

@@ -5,7 +5,7 @@
 
 # Register apt repository
 eval $(apt-config shell APT_SOURCE_PARTS Dir::Etc::sourceparts/d)
-HAMONIKR_SOURCE_PART=${APT_SOURCE_PARTS}hamonikr-pkg.list
+HAMONIKR_SOURCE_PART=${APT_SOURCE_PARTS}hamonikr-app.list
 
 eval $(apt-config shell APT_TRUSTED_PARTS Dir::Etc::trustedparts/d)
 HAMONIKR_TRUSTED_PART=${APT_TRUSTED_PARTS}hamonikr.gpg
@@ -26,10 +26,11 @@ fi
 if [ "$WRITE_SOURCE" -eq "1" ]; then
 	echo "### THIS FILE IS AUTOMATICALLY CONFIGURED ###
 deb [arch=amd64] https://repo.hamonikr.org jammy main extra" > $HAMONIKR_SOURCE_PART
+fi
 
-    # Sourced from https://repo.hamonikr.org/hamonikr-pkg.key
-    if [ ! -f $HAMONIKR_TRUSTED_PART ]; then
-        echo "-----BEGIN PGP PUBLIC KEY BLOCK-----
+# Sourced from https://repo.hamonikr.org/hamonikr-pkg.key
+if [ ! -f $HAMONIKR_TRUSTED_PART ]; then
+    echo "-----BEGIN PGP PUBLIC KEY BLOCK-----
 Version: GnuPG v1.4.7 (GNU/Linux)
 
 mQINBF+FK9MBEADF4B/AOq7OSIxKu3bqVaYSH+VsLo5slCaujfgSiha9kERgs+Wj
