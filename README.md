@@ -41,6 +41,29 @@ sudo apt install -f ./hamonikr-zsh_*_amd64.deb
 ```
 프로그램 설치 후 시스템을 재시작하면 새로운 터미널 환경이 적용됩니다.
 
-## 버그 또는 이슈 제출
+## FAQ
 
-사용 중 발견한 버그나 이슈는 help@hamonikr.org 로 메일을 보내주세요
+##
+
+ **Q:** 터미널의 폰트가 적용되지 않습니다. 어떻게 설정하나요? 
+
+ **A:** 기존의 사용하던 터미널 설정이 우선되었을 수 있습니다. 터미널 설정에서 사용자 지정 글꼴을 'Hack Nerd Font' 로 설정하세요.
+ ![font-setting](doc/font-setting.png)
+##
+
+##
+
+ **Q:** vscode 안의 터미널이 제대로 표시되지 않습니다. 어떻게 해야 하나요?
+
+ **A:** vscode 안의 터미널은 별도의 폰트 설정을 가지고 있습니다. vscode의 파일-> 기본설정-> 설정 메뉴에서 다음과 같이 터미널 폰트를 'Hack Nerd Font'로 변경해주세요.
+ ![vscode-setting](doc/vscode-setting.png)
+
+ 변경 후 vscode에서 터미널을 실행하면 다음과 같이 표시됩니다.
+ ![vscode-terminal](doc/vscode-terminal.png) 
+##
+
+
+
+## 기타 버그 또는 이슈 
+
+사용 중 발견한 버그나 이슈는 [이슈 페이지](https://github.com/hamonikr/hamonikr-zsh/issues) 또는 (하모니카 커뮤니티](https://hamonikr.org)에서 공유해주세요.
