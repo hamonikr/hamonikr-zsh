@@ -67,4 +67,4 @@ sudo apt install -f ./hamonikr-zsh_*_amd64.deb
 
 ## 기타 버그 또는 이슈 
 
-사용 중 발견한 버그나 이슈는 [이슈 페이지](https://github.com/hamonikr/hamonikr-zsh/issues) 또는 (하모니카 커뮤니티](https://hamonikr.org)에서 공유해주세요.
+사용 중 발견한 버그나 이슈는 [이슈 페이지](https://github.com/hamonikr/hamonikr-zsh/issues) 또는 [하모니카 커뮤니티](https://hamonikr.org)에서 공유해주세요.
