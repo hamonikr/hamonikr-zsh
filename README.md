@@ -35,10 +35,11 @@ cherry-pick       -- apply changes introduced by some existing commits
  
 -----
 ## 설치
-[릴리즈 페이지](https://github.com/hamonikr/hamonikr-zsh/releases)에서 배포한 최신 패키지를 다운로드 받아서 설치.
+[릴리즈 페이지](https://github.com/hamonikr/hamonikr-zsh/releases)에서 배포한 최신 패키지를 다운로드 받아서 아래와 같이 설치.
 ```
-sudo apt install -f ./hamonikr-zsh_2.0.0_amd64.deb
+sudo apt install -f ./hamonikr-zsh_*_amd64.deb
 ```
+프로그램 설치 후 시스템을 재시작하면 새로운 터미널 환경이 적용됩니다.
 
 ## 버그 또는 이슈 제출
 

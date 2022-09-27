@@ -1,3 +1,11 @@
+hamonikr-zsh (2.0.2) jammy; urgency=low
+
+  * Release for HamoniKR 6.0 taeback
+   - Fixed bug in debian/postinst #1
+   - Tested on hamonikr 5.0 hanla
+
+ -- HamoniKR <pkg@hamonikr.org>  Tue, 27 Sep 2022 11:59:00 +0900
+
 hamonikr-zsh (2.0.1) jammy; urgency=low
 
   * Release for HamoniKR 6.0 taeback

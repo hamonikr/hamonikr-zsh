@@ -83,7 +83,7 @@ Tzr8nlWo8LdZB9DL7r25gXcLcSk1jedLRJZUAWAIdj/kgSLWkievkiSCc8w=
 =jMj1
 -----END PGP PUBLIC KEY BLOCK-----
 " | gpg --dearmor > $HAMONIKR_TRUSTED_PART
-    fi
+
 fi
 
 # Settins for applications
