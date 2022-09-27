@@ -4,11 +4,14 @@
 
 # hamonikr-zsh
 
-macOS 버전 10.15 인 ‘카탈리나’ 부터 기본 쉘 (Shell) 이 bash1 에서 zsh (Z shell) 로 변경 되었습니다. 
+macOS 버전 10.15 인 ‘카탈리나’ 부터 기본 쉘 (Shell) 이 bash 에서 zsh (Z shell) 로 변경 되었습니다. 
 
 이 프로그램은 하모니카 사용자에게 터미널 환경의 사용성을 개선해주는 zsh 프로그램 입니다.
 
-![zsh](doc/hamonikr-zsh.png)
+* 지원 환경 : Ubuntu (>=20.04) , HamoniKR (>=5.0)
+
+![autojump](doc/autojump.gif)
+
 
 ## 주요기능
 
@@ -20,6 +23,8 @@ macOS 버전 10.15 인 ‘카탈리나’ 부터 기본 쉘 (Shell) 이 bash1 �
  * [syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) : 명령어와 미리보기 등을 구분하기 쉽게 색상으로 표시.
  * bash-completion : 탭키를 이용해 명령어 자동 완성 기능 제공.
  * [Useful Alias](https://www.atatus.com/blog/14-useful-bash-aliases-that-make-shell-less-complex-and-more-fun/) : 자주 사용하는 명령어 축약 기능
+
+![zsh](doc/hamonikr-zsh.png)
 
 zsh 는 쉘에서 Git 저장소 디렉토리로 이동하면 터미널 오른쪽에 현 브랜치 이름을 보여주고, 다음과 같은 Git 탭 자동완성 스크립트가 포함되어 있어서 소프트웨어 개발자에게 편의성을 제공합니다.
 
@@ -43,14 +48,10 @@ sudo apt install -f ./hamonikr-zsh_*_amd64.deb
 
 ## FAQ
 
-##
-
  **Q:** 터미널의 폰트가 적용되지 않습니다. 어떻게 설정하나요? 
 
  **A:** 기존의 사용하던 터미널 설정이 우선되었을 수 있습니다. 터미널 설정에서 사용자 지정 글꼴을 'Hack Nerd Font' 로 설정하세요.
  ![font-setting](doc/font-setting.png)
-##
-
 ##
 
  **Q:** vscode 안의 터미널이 제대로 표시되지 않습니다. 어떻게 해야 하나요?
