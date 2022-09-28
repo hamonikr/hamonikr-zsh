@@ -94,8 +94,13 @@ RUID=$(who | awk 'FNR == 1 {print $1}')
 # Translate Real Username to Real User ID
 RUSER_UID=$(id -u ${RUID})
 
-touch /home/${RUID}/.zshrc
+# Backup previous zshrc 
 if [[ -f "/home/${RUID}/.zshrc" ]] ; then
+    mv /home/${RUID}/.zshrc /home/${RUID}/.zshrc.orig
+fi 
+
+#  Create new zshrc
+if [[ ! -f "/home/${RUID}/.zshrc" ]] ; then
     cat >> "/home/${RUID}/.zshrc" <<'EOL'
 # Prompt settings
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir vcs)
@@ -154,12 +159,12 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias myip='curl http://ipecho.net/plain; echo'
 alias apt='sudo apt'
 alias apu='sudo apt update'
-alias code='code --no-sandbox'
 alias df='df -h'
 alias lt='ls --human-readable --size -1 -S --classify'
 alias left='ls -t -1'
 alias count='find . -type f | wc -l'
 alias cpv='rsync -ah --info=progress2'
+alias code='code --no-sandbox'
 
 EOL
 

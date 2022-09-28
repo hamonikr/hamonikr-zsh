@@ -1,3 +1,11 @@
+hamonikr-zsh (2.0.3) jammy; urgency=low
+
+  * Added global zsh env in /etc/skel
+   - Add .zshrc for new account
+   - keep previous zsrc file as .zshrc.orig
+
+ -- HamoniKR <pkg@hamonikr.org>  Wed, 28 Sep 2022 09:43:17 +0900
+
 hamonikr-zsh (2.0.2) jammy; urgency=low
 
   * Release for HamoniKR 6.0 taeback
