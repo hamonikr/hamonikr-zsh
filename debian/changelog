@@ -1,3 +1,10 @@
+hamonikr-zsh (2.0.5) jammy; urgency=low
+
+  * fixed issue #2
+   - Added project homepage in control file
+
+ -- HamoniKR <pkg@hamonikr.org>  Wed, 28 Sep 2022 16:45:01 +0900
+
 hamonikr-zsh (2.0.4) jammy; urgency=low
 
   * Added preinst script 
