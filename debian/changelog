@@ -1,3 +1,10 @@
+hamonikr-zsh (2.0.4) jammy; urgency=low
+
+  * Added preinst script 
+   - backup previous zsrc file as .zshrc.orig
+
+ -- HamoniKR <pkg@hamonikr.org>  Wed, 28 Sep 2022 10:33:26 +0900
+
 hamonikr-zsh (2.0.3) jammy; urgency=low
 
   * Added global zsh env in /etc/skel

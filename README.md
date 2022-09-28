@@ -63,6 +63,15 @@ sudo apt install -f ./hamonikr-zsh_*_amd64.deb
  ![vscode-terminal](doc/vscode-terminal.png) 
 ##
 
+ **Q:** 이전에 zsh 사용을 하고 있었습니다. 기존 환경 설정은 어떻게 되나요?
+
+ **A:** 이전에 사용하던 zsh 설정은 사용자 홈 디렉토리에 .zshrc.orig 라는 파일명으로 보관됩니다. 
+ ##
+
+ **Q:** 터미널을 실행하면 아래와 같은 화면이 나옵니다. 어떻게 해야 하나요?
+![no-zshrc](doc/no-zshrc.png)
+
+ **A:** 프로그램 설치 후 시스템을 재시작 하지 않고 터미널을 실행하면, zsh 설정이 존재하지 않아서 알려주는 메시지 입니다. 시스템을 재시작 하시면 새로운 환경이 적용됩니다.
 
 
 ## 기타 버그 또는 이슈 

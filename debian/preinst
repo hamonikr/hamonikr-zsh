@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# 
+# Copyright HamoniKR Team. All rights reserved.
+# See LICENSE.md in the project root for license information.
+
+# Get the Real Username
+RUID=$(who | awk 'FNR == 1 {print $1}')
+
+# Translate Real Username to Real User ID
+RUSER_UID=$(id -u ${RUID})
+
+# Backup previous zshrc 
+if [[ -f "/home/${RUID}/.zshrc" ]] ; then
+    echo "Backup previous config to ~/.zshrc.orig"
+    mv -f "/home/${RUID}/.zshrc" "/home/${RUID}/.zshrc.orig"
+fi 
