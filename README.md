@@ -38,7 +38,8 @@ cherry            -- find commits not merged upstream
 cherry-pick       -- apply changes introduced by some existing commits
 ```
 
-보다 자세한 사용법은 [zsh 매뉴얼](https://docs.hamonikr.org/hamonikr-5.0/tips/z-shell)
+보다 자세한 사용법은 [zsh 매뉴얼](https://docs.hamonikr.org/hamonikr-5.0/tips/z-shell) 을 참고하세요.
+
 
 -----
 ## 설치
