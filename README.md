@@ -37,7 +37,9 @@ checkout-index    -- copy files from index to working directory
 cherry            -- find commits not merged upstream
 cherry-pick       -- apply changes introduced by some existing commits
 ```
- 
+
+보다 자세한 사용법은 [zsh 매뉴얼](https://docs.hamonikr.org/hamonikr-5.0/tips/z-shell)
+
 -----
 ## 설치
 [릴리즈 페이지](https://github.com/hamonikr/hamonikr-zsh/releases)에서 배포한 최신 패키지를 다운로드 받아서 아래와 같이 설치.
