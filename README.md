@@ -1,3 +1,5 @@
+![ubuntu-focal](https://img.shields.io/badge/ubuntu-20.04-red)
+![ubuntu-hirsute](https://img.shields.io/badge/ubuntu-21.04-red)
 ![ubuntu-jammy](https://img.shields.io/badge/ubuntu-22.04-red)
 ![hamonikr-hanla](https://img.shields.io/badge/hamonikr-hanla-purple)
 ![hamonikr-taebaek](https://img.shields.io/badge/hamonikr-taeback-green)
