@@ -12,5 +12,12 @@ if [[ -f "/home/${RUID}/.zshrc" ]] ; then
     rm -f "/home/${RUID}/.zshrc"
 fi
 
+if [ -f "/etc/hamonikr/templates/gnome-terminal-backup.dconf" ]; then
+    CURRENT_PF=`sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings list-recursively org.gnome.Terminal.ProfilesList | grep default | cut -d' ' -f3 | tr -d "'"`
+    sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" dconf load /org/gnome/terminal/legacy/profiles:/:${CURRENT_PF}/ < /etc/hamonikr/templates/gnome-terminal-backup.dconf
+    rm -f /etc/hamonikr/templates/gnome-terminal-backup.dconf
+    echo "Restore gnome terminal profile"
+fi
+
 # Change Shell to BASH
 chsh -s /bin/bash ${RUID}

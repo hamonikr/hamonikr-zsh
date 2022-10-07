@@ -16,6 +16,13 @@ case "$1" in
         chsh -s $(which zsh) ${RUID}
 
         fc-cache -frv >/dev/null 2>&1 || true
+
+        if [ -f "/etc/hamonikr/info" ] && [ -f "/etc/hamonikr/templates/gnome-terminal.dconf" ]; then
+            CURRENT_PF=`sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings list-recursively org.gnome.Terminal.ProfilesList | grep default | cut -d' ' -f3 | tr -d "'"`
+            sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" dconf dump /org/gnome/terminal/legacy/profiles:/:${CURRENT_PF}/ > /etc/hamonikr/templates/gnome-terminal-backup.dconf
+            sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" dconf load /org/gnome/terminal/legacy/profiles:/:${CURRENT_PF}/ < /etc/hamonikr/templates/gnome-terminal.dconf
+            echo "Updated gnome terminal profile"
+        fi
     ;;
     triggered)
     ;;
