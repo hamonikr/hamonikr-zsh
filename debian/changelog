@@ -1,3 +1,11 @@
+hamonikr-zsh (2.1.0) taebaek; urgency=low
+
+  * Updated maintainer scripts
+   - removed user side command.
+   - removed register hamonikr apt repo feature.
+
+ -- HamoniKR <pkg@hamonikr.org>  Fri, 07 Oct 2022 11:58:28 +0900
+
 hamonikr-zsh (2.0.6) jammy; urgency=low
 
   * closed #3
