@@ -3,5 +3,18 @@
 # Copyright HamoniKR Team. All rights reserved.
 # See LICENSE.md in the project root for license information.
 
-fc-cache -frv || true
-chsh -s /bin/zsh
+case "$1" in
+    configure|upgrade|update|reconfigure)
+        fc-cache -frv >/dev/null 2>&1 || true
+    ;;
+    triggered)
+    ;;
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+    *)
+        echo "postinst called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+exit 0

@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-# 
-# Copyright HamoniKR Team. All rights reserved.
-# See LICENSE.md in the project root for license information.
-
-# Change Shell to BASH
-chsh -s /bin/bash
