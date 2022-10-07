@@ -45,7 +45,17 @@ cherry-pick       -- apply changes introduced by some existing commits
 
 -----
 ## 설치
-[릴리즈 페이지](https://github.com/hamonikr/hamonikr-zsh/releases)에서 배포한 최신 패키지를 다운로드 받아서 아래와 같이 설치.
+
+### 하모니카 OS (>=5.0)
+```
+wget -qO- https://update.hamonikr.org/add-update-repo.apt | sudo -E bash -
+
+sudo apt install hamonikr-zsh
+```
+
+### Other Ubutu base distro. (Ubuntu >=20.04)
+
+[Release](https://github.com/hamonikr/hamonikr-zsh/releases)에서 배포한 최신 패키지를 다운로드 받아서 아래와 같이 설치.
 ```
 sudo apt install -f ./hamonikr-zsh_*_amd64.deb
 ```
