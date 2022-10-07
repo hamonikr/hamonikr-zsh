@@ -1,9 +1,0 @@
-[Desktop Entry]
-Encoding=UTF-8
-Version=1.0
-Name=zsh setting
-Comment=Change default shell to zsh
-Exec=chsh -s $(which zsh) ${USER}
-Terminal=false
-Type=Application
-StartupNotify=false

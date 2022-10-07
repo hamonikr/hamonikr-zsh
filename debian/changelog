@@ -1,3 +1,11 @@
+hamonikr-zsh (2.1.2) taebaek; urgency=low
+
+  * Fixed bugs
+   - 'chsh' command must be changed by user
+   - Tested in linuxmint 20.3
+
+ -- HamoniKR <pkg@hamonikr.org>  Fri, 07 Oct 2022 12:51:37 +0900
+
 hamonikr-zsh (2.1.1) taebaek; urgency=low
 
   * Add desktop file

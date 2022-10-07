@@ -5,6 +5,16 @@
 
 case "$1" in
     configure|upgrade|update|reconfigure)
+
+        # Get the Real Username and ID
+        RUID=$(who | awk 'FNR == 1 {print $1}')
+        RUSER_UID=$(id -u ${RUID})
+        if [[ ! -f "/home/${RUID}/.zshrc" ]] ; then
+            cp -a /etc/skel/.zshrc /home/${RUID}/.zshrc
+        fi
+        sudo chown ${RUID}:${RUID} /home/${RUID}/.zshrc
+        chsh -s $(which zsh) ${RUID}
+
         fc-cache -frv >/dev/null 2>&1 || true
     ;;
     triggered)

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+# 
+# Copyright HamoniKR Team. All rights reserved.
+# See LICENSE.md in the project root for license information.
+
+# Real Username and ID
+RUID=$(who | awk 'FNR == 1 {print $1}')
+RUSER_UID=$(id -u ${RUID})
+
+# Remove setting file
+if [[ -f "/home/${RUID}/.zshrc" ]] ; then
+    rm -f "/home/${RUID}/.zshrc"
+fi
+
+# Change Shell to BASH
+chsh -s /bin/bash ${RUID}
