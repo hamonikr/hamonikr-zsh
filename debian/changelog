@@ -1,3 +1,10 @@
+hamonikr-zsh (2.1.6) taebaek; urgency=low
+
+  * Add Exception handling in postinst
+   - Cause raise error when build
+
+ -- HamoniKR <pkg@hamonikr.org>  Sun, 16 Oct 2022 16:41:42 +0900
+
 hamonikr-zsh (2.1.5) taebaek; urgency=low
 
   * Add default gnome terminal profile

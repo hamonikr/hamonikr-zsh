@@ -9,20 +9,26 @@ case "$1" in
         # Get the Real Username and ID
         RUID=$(who | awk 'FNR == 1 {print $1}')
         RUSER_UID=$(id -u ${RUID})
-        if [[ ! -f "/home/${RUID}/.zshrc" ]] ; then
-            cp -a /etc/skel/.zshrc /home/${RUID}/.zshrc
+
+        if [ ! -z "$RUID" ] ; then
+
+            if [ ! -f "/home/${RUID}/.zshrc" ] ; then
+                cp -a /etc/skel/.zshrc /home/${RUID}/.zshrc
+            fi
+            sudo chown ${RUID}:${RUID} /home/${RUID}/.zshrc
+            chsh -s $(which zsh) ${RUID}
+
+            if [ -f "/etc/hamonikr/info" ] && [ -f "/etc/hamonikr/templates/gnome-terminal.dconf" ]; then
+                CURRENT_PF=`sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings list-recursively org.gnome.Terminal.ProfilesList | grep default | cut -d' ' -f3 | tr -d "'"`
+                sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" dconf dump /org/gnome/terminal/legacy/profiles:/:${CURRENT_PF}/ > /etc/hamonikr/templates/gnome-terminal-backup.dconf
+                sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" dconf load /org/gnome/terminal/legacy/profiles:/:${CURRENT_PF}/ < /etc/hamonikr/templates/gnome-terminal.dconf
+                echo "Updated gnome terminal profile"
+            fi
+
         fi
-        sudo chown ${RUID}:${RUID} /home/${RUID}/.zshrc
-        chsh -s $(which zsh) ${RUID}
 
         fc-cache -frv >/dev/null 2>&1 || true
 
-        if [ -f "/etc/hamonikr/info" ] && [ -f "/etc/hamonikr/templates/gnome-terminal.dconf" ]; then
-            CURRENT_PF=`sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" gsettings list-recursively org.gnome.Terminal.ProfilesList | grep default | cut -d' ' -f3 | tr -d "'"`
-            sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" dconf dump /org/gnome/terminal/legacy/profiles:/:${CURRENT_PF}/ > /etc/hamonikr/templates/gnome-terminal-backup.dconf
-            sudo -u ${RUID} DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/${RUSER_UID}/bus" dconf load /org/gnome/terminal/legacy/profiles:/:${CURRENT_PF}/ < /etc/hamonikr/templates/gnome-terminal.dconf
-            echo "Updated gnome terminal profile"
-        fi
     ;;
     triggered)
     ;;
