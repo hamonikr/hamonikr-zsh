@@ -1,3 +1,10 @@
+hamonikr-zsh (2.1.7) taebaek; urgency=low
+
+  * Support i386
+   - Build on LDME5 32bit
+
+ -- HamoniKR <pkg@hamonikr.org>  Fri, 02 Dec 2022 11:13:31 +0900
+
 hamonikr-zsh (2.1.6) taebaek; urgency=low
 
   * Add Exception handling in postinst

@@ -7,7 +7,7 @@ Build-Depends: debhelper (>= 9)
 Standards-Version: 3.9.5
 
 Package: hamonikr-zsh
-Architecture: amd64
+Architecture: all
 Depends: git,
          powerline,
          zsh-theme-powerlevel9k,
