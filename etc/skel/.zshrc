@@ -6,6 +6,11 @@ POWERLEVEL9K_COLOR_SCHEME="light"
 POWERLEVEL9K_CONTEXT_DEFAULT_BACKGROUND="slateblue1"
 POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND="white"
 
+# history
+HISTSIZE=2000
+SAVEHIST=2000
+HISTFILE="$HOME/.zsh_history"
+
 source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
 source /usr/share/autojump/autojump.sh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
