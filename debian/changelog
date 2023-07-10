@@ -1,4 +1,4 @@
-hamonikr-zsh (2.1.9) stable; urgency=low
+hamonikr-zsh (2.2.0) stable; urgency=low
 
   * Add bash-completion variable for apt command
    - fixed for 'apt install -f' command
