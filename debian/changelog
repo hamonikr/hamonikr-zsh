@@ -1,3 +1,9 @@
+hamonikr-zsh (2.2.1) stable; urgency=low
+
+  * Fixed for 'apt install' command with bash-completion
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 10 Jul 2023 12:57:41 +0900
+
 hamonikr-zsh (2.2.0) stable; urgency=low
 
   * Add bash-completion variable for apt command
