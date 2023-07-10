@@ -28,6 +28,11 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# Add bash-completion variable for apt command (apt install -f)
+if [ -f /usr/share/bash-completion/completions/apt ]; then
+    source /usr/share/bash-completion/completions/apt
+fi
+
 # Alias    
 alias ll='ls -alF'
 alias la='ls -A'
