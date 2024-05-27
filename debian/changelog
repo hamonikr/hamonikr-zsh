@@ -1,3 +1,10 @@
+hamonikr-zsh (2.3.1) stable; urgency=low
+
+  * Support powerlevel10k
+  * Add few nerd fonts
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 27 May 2024 18:28:29 +0900
+
 hamonikr-zsh (2.3.0) stable; urgency=low
 
   * Release for Ubuntu 22.04

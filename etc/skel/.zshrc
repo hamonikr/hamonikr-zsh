@@ -19,6 +19,9 @@ autoload -U +X compinit && compinit
 autoload -U +X bashcompinit && bashcompinit
 source /usr/share/bash-completion/bash_completion  &>/dev/null
 
+source /usr/share/powerlevel10k/powerlevel10k.zsh-theme
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 # dircolors
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
