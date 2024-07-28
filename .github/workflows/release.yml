@@ -78,29 +78,10 @@ jobs:
 
       - run: ls -R .
 
-      - name: Set latest and previous tags
-        id: tags
-        run: |
-          latest_tag=$(git describe --tags --abbrev=0 --match "v*")
-          if [ -z "$latest_tag" ]; then
-            latest_tag=$(git rev-list --max-parents=0 HEAD)
-            previous_tag=$latest_tag
-          else
-            previous_tag=$(git tag --sort=-creatordate | grep -E "^v" | sed -n "/$latest_tag/{n;p;}")
-            if [ -z "$previous_tag" ]; then
-              previous_tag=$(git rev-list --max-parents=0 HEAD)
-            fi
-          fi
-          echo "latest_tag=$latest_tag" >> $GITHUB_ENV
-          echo "previous_tag=$previous_tag" >> $GITHUB_ENV
-
       - name: Generate Changelog
         id: changelog
-        env:
-          REPO_URL: "https://github.com/${{ github.repository }}"
         run: |
-          echo "## Changelog :" > changelog.txt
-          git log --pretty=format:"- %ad %an: %s ([%h](${REPO_URL}/commit/%H))" --date=short ${{ env.previous_tag }}..${{ env.latest_tag }} --no-merges >> changelog.txt
+          ./generate_changelog.sh release > changelog.txt
 
       - run: cat changelog.txt
 
