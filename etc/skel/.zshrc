@@ -11,7 +11,12 @@ HISTSIZE=2000
 SAVEHIST=2000
 HISTFILE="$HOME/.zsh_history"
 
-source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
+if [[ -f "/usr/share/powerlevel10k/powerlevel10k.zsh-theme" ]]; then
+    source /usr/share/powerlevel10k/powerlevel10k.zsh-theme
+    [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+else
+    source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
+fi
 source /usr/share/autojump/autojump.sh
 source /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
