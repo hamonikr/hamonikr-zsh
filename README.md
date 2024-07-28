@@ -1,14 +1,10 @@
-![ubuntu-focal](https://img.shields.io/badge/ubuntu-20.04-red)
-![ubuntu-hirsute](https://img.shields.io/badge/ubuntu-21.04-red)
-![ubuntu-jammy](https://img.shields.io/badge/ubuntu-22.04-red)
-![hamonikr-hanla](https://img.shields.io/badge/hamonikr-hanla-purple)
-![hamonikr-taebaek](https://img.shields.io/badge/hamonikr-taeback-green)
+![ubuntu](https://img.shields.io/badge/ubuntu->=20.04-red)
+![hamonikr](https://img.shields.io/badge/hamonikr->=5.0-purple)
+[![Release Status](https://github.com/hamonikr/hamonikr-zsh/actions/workflows/release.yml/badge.svg)](https://github.com/hamonikr/hamonikr-zsh/actions/workflows/release.yml)
 
 # hamonikr-zsh
 
-macOS 버전 10.15 인 ‘카탈리나’ 부터 기본 쉘 (Shell) 이 bash 에서 zsh (Z shell) 로 변경 되었습니다. 
-
-이 프로그램은 하모니카 사용자에게 터미널 환경의 사용성을 개선해주는 zsh 프로그램 입니다.
+이 프로그램은 하모니카 사용자에게 맥과 같은 터미널 환경을 제공해서 터미널의 사용성을 개선해주는 프로그램 입니다.
 
 * 지원 환경 : Ubuntu (>=20.04) , HamoniKR (>=5.0)
 
@@ -17,14 +13,14 @@ macOS 버전 10.15 인 ‘카탈리나’ 부터 기본 쉘 (Shell) 이 bash 에
 
 ## 주요기능
 
- * [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/)
- * [zsh-theme-powerlevel9k](https://github.com/Powerlevel9k/powerlevel9k)
- * Using [Hack Regular Nerd Font Complete](https://github.com/ryanoasis/)
- * [autojump](https://github.com/wting/autojump) : 여러변의 cd명령을 통해서 디렉터리를 바꾸는 것을 간단히 j 명령을 통해서 한번에 이동 가능.
- * [autosuggestion](https://github.com/zsh-users/zsh-autosuggestions) : 최근에 입력한 명령어를 미리보기 형태로 보여주고 방향키를 통해 나타난 명령어라인을 빠르게 완성.
- * [syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) : 명령어와 미리보기 등을 구분하기 쉽게 색상으로 표시.
- * bash-completion : 탭키를 이용해 명령어 자동 완성 기능 제공.
- * [Useful Alias](https://www.atatus.com/blog/14-useful-bash-aliases-that-make-shell-less-complex-and-more-fun/) : 자주 사용하는 명령어 축약 기능
+ * 설정 : [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/)
+* 테마 : [zsh-theme-powerlevel10k](https://github.com/romkatv/powerlevel10k) 지원
+ * 터미널 폰트 : [Hack Regular Nerd Font Complete](https://github.com/ryanoasis/)
+ * 확장기능 [autojump](https://github.com/wting/autojump) : 여러변의 cd명령을 통해서 디렉터리를 바꾸는 것을 간단히 j 명령을 통해서 한번에 이동 가능.
+ * 확장기능 [autosuggestion](https://github.com/zsh-users/zsh-autosuggestions) : 최근에 입력한 명령어를 미리보기 형태로 보여주고 방향키를 통해 나타난 명령어라인을 빠르게 완성.
+ * 확장기능 [syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting) : 명령어와 미리보기 등을 구분하기 쉽게 색상으로 표시.
+ * 확장기능 bash-completion : 탭키를 이용해 명령어 자동 완성 기능 제공.
+ * 확장기능 [Useful Alias](https://www.atatus.com/blog/14-useful-bash-aliases-that-make-shell-less-complex-and-more-fun/) : 자주 사용하는 명령어 축약 기능
 
 ![zsh](doc/hamonikr-zsh.png)
 
@@ -46,14 +42,7 @@ cherry-pick       -- apply changes introduced by some existing commits
 -----
 ## 설치
 
-### 하모니카 OS (>=5.0)
-```
-wget -qO- https://update.hamonikr.org/add-update-repo.apt | sudo -E bash -
-
-sudo apt install hamonikr-zsh
-```
-
-### Other Ubutu base distro. (Ubuntu >=20.04)
+### Debian, Ubuntu, LinuxMint
 
 [Release](https://github.com/hamonikr/hamonikr-zsh/releases)에서 배포한 최신 패키지를 다운로드 받아서 아래와 같이 설치.
 ```
@@ -65,13 +54,19 @@ sudo apt install -f ./hamonikr-zsh_*_amd64.deb
 
  **Q:** 터미널의 폰트가 적용되지 않습니다. 어떻게 설정하나요? 
 
- **A:** 기존의 사용하던 터미널 설정이 우선되었을 수 있습니다. 터미널 설정에서 사용자 지정 글꼴을 'Hack Nerd Font' 로 설정하세요.
+ **A:** 기존의 사용하던 터미널 설정이 우선되었을 수 있습니다. 
+ 
+ 터미널 설정에서 사용자 지정 글꼴을 'Hack Nerd Font' 로 설정하세요.
+
  ![font-setting](doc/font-setting.png)
 ##
 
  **Q:** vscode 안의 터미널이 제대로 표시되지 않습니다. 어떻게 해야 하나요?
 
- **A:** vscode 안의 터미널은 별도의 폰트 설정을 가지고 있습니다. vscode의 파일-> 기본설정-> 설정 메뉴에서 다음과 같이 터미널 폰트를 'Hack Nerd Font'로 변경해주세요.
+ **A:** vscode 안의 터미널은 별도의 폰트 설정을 가지고 있습니다. 
+ 
+ vscode의 파일-> 기본설정-> 설정 메뉴에서 다음과 같이 터미널 폰트를 'Hack Nerd Font'로 변경해주세요.
+
  ![vscode-setting](doc/vscode-setting.png)
 
  변경 후 vscode에서 터미널을 실행하면 다음과 같이 표시됩니다.
@@ -84,9 +79,12 @@ sudo apt install -f ./hamonikr-zsh_*_amd64.deb
  ##
 
  **Q:** 터미널을 실행하면 아래와 같은 화면이 나옵니다. 어떻게 해야 하나요?
+
 ![no-zshrc](doc/no-zshrc.png)
 
- **A:** 프로그램 설치 후 시스템을 재시작 하지 않고 터미널을 실행하면, zsh 설정이 존재하지 않아서 알려주는 메시지 입니다. 시스템을 재시작 하시면 새로운 환경이 적용됩니다.
+ **A:** 프로그램 설치 후 시스템을 재시작 하지 않고 터미널을 실행하면, zsh 설정이 존재하지 않아서 알려주는 메시지 입니다. 
+ 
+ 시스템을 재시작 하시면 새로운 환경이 적용됩니다.
 ##
 
  **Q:** 새 사용자를 생성했는데 zsh가 기본으로 설정되지 않습니다. 어떻게 해야 zsh를 사용할 수 있나요?
@@ -95,14 +93,6 @@ sudo apt install -f ./hamonikr-zsh_*_amd64.deb
  ```
  chsh -s $(which zsh)
  ```
- ##
-
- **Q:** 터미널을 실행하면 아래와 같은 화면이 나옵니다. 어떻게 해야 하나요?
-![no-zshrc](doc/no-zshrc.png)
-
- **A:** 프로그램 설치 후 시스템을 재시작 하지 않고 터미널을 실행하면, zsh 설정이 존재하지 않아서 알려주는 메시지 입니다. 시스템을 재시작 하시면 새로운 환경이 적용됩니다.
- chsh -s /bin/zsh ${RUID}
-
 
 ## 기타 버그 또는 이슈 
 
