@@ -99,7 +99,7 @@ jobs:
         env:
           REPO_URL: "https://github.com/${{ github.repository }}"
         run: |
-          echo "Changelog generated from commit logs:" > changelog.txt
+          echo "## Changelog :" > changelog.txt
           git log --pretty=format:"- %ad %an: %s ([%h](${REPO_URL}/commit/%H))" --date=short ${{ env.previous_tag }}..${{ env.latest_tag }} --no-merges >> changelog.txt
 
       - run: cat changelog.txt
