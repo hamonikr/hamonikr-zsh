@@ -76,7 +76,10 @@ jobs:
           name: debian-package-ubuntu2204
           path: .
 
-      - run: ls -R .
+      - run: ls -R .          
+
+      - name: Checkout source code
+        uses: actions/checkout@v3
 
       - name: Set latest and previous tags
         id: tags
@@ -98,6 +101,8 @@ jobs:
         run: |
           echo "Changelog generated from commit logs:" > changelog.txt
           git log --pretty=format:"- %ad %an: %s ([%h](${REPO_URL}/commit/%H))" --date=short ${{ env.previous_tag }}..${{ env.latest_tag }} --no-merges >> changelog.txt
+
+      - run: cat changelog.txt
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
