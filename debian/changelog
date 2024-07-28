@@ -1,3 +1,9 @@
+hamonikr-zsh (2.4.0) unstable; urgency=low
+
+  * Release in linuxmint wilma
+
+ -- HamoniKR <pkg@hamonikr.org>  Sun, 28 Jul 2024 22:20:58 +0900
+
 hamonikr-zsh (2.3.1+h1) stable; urgency=low
 
   * Release for bookworm arm64
