@@ -78,9 +78,6 @@ jobs:
 
       - run: ls -R .
 
-      - name: Checkout source code
-        uses: actions/checkout@v3
-
       - name: Set latest and previous tags
         id: tags
         run: |
@@ -101,6 +98,8 @@ jobs:
         run: |
           echo "## Changelog :" > changelog.txt
           git log --pretty=format:"- %ad %an: %s ([%h](${REPO_URL}/commit/%H))" --date=short ${{ env.previous_tag }}..${{ env.latest_tag }} --no-merges >> changelog.txt
+
+      - run: cat changelog.txt
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
