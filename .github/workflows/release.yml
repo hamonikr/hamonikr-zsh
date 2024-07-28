@@ -86,7 +86,7 @@ jobs:
             latest_tag=$(git rev-list --max-parents=0 HEAD)
             previous_tag=$latest_tag
           else
-            previous_tag=$(git tag --sort=-creatordate | grep -E "^v" | grep -B 1 $latest_tag | head -n 1)
+            previous_tag=$(git tag --sort=-creatordate | grep -E "^v" | grep -A 1 $latest_tag | tail -n 1 | grep -v $latest_tag)
             if [ "$latest_tag" = "$previous_tag" ]; then
               previous_tag=$(git rev-list --max-parents=0 HEAD)
             fi
