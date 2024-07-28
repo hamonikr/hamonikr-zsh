@@ -76,7 +76,7 @@ jobs:
           name: debian-package-ubuntu2204
           path: .
 
-      - run: ls -R .          
+      - run: ls -R .
 
       - name: Checkout source code
         uses: actions/checkout@v3
@@ -89,7 +89,7 @@ jobs:
             latest_tag=$(git rev-list --max-parents=0 HEAD)
             previous_tag=$latest_tag
           else
-            previous_tag=$(git describe --tags --abbrev=0 $(git rev-list --tags --max-count=1 ${latest_tag}^))
+            previous_tag=$(git tag --sort=-creatordate | grep -E "^v" | grep -A 1 $latest_tag | tail -n 1)
           fi
           echo "latest_tag=$latest_tag" >> $GITHUB_ENV
           echo "previous_tag=$previous_tag" >> $GITHUB_ENV
@@ -101,8 +101,6 @@ jobs:
         run: |
           echo "## Changelog :" > changelog.txt
           git log --pretty=format:"- %ad %an: %s ([%h](${REPO_URL}/commit/%H))" --date=short ${{ env.previous_tag }}..${{ env.latest_tag }} --no-merges >> changelog.txt
-
-      - run: cat changelog.txt
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v1
