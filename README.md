@@ -14,7 +14,7 @@
 ## 주요기능
 
  * 설정 : [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh/)
-* 테마 : [zsh-theme-powerlevel10k](https://github.com/romkatv/powerlevel10k) 지원
+ * 테마 : [zsh-theme-powerlevel10k](https://github.com/romkatv/powerlevel10k) 지원
  * 터미널 폰트 : [Hack Regular Nerd Font Complete](https://github.com/ryanoasis/)
  * 확장기능 [autojump](https://github.com/wting/autojump) : 여러변의 cd명령을 통해서 디렉터리를 바꾸는 것을 간단히 j 명령을 통해서 한번에 이동 가능.
  * 확장기능 [autosuggestion](https://github.com/zsh-users/zsh-autosuggestions) : 최근에 입력한 명령어를 미리보기 형태로 보여주고 방향키를 통해 나타난 명령어라인을 빠르게 완성.
@@ -51,6 +51,16 @@ sudo apt install -f ./hamonikr-zsh_*_amd64.deb
 프로그램 설치 후 시스템을 재시작하면 새로운 터미널 환경이 적용됩니다.
 
 ## FAQ
+
+ **Q:** 터미널의 스타일을 변경하고 싶습니다. 어떻게 하나요? 
+
+ **A:** `p10k configure` 명령을 이용하면 원하는 스타일을 설정할 수 있는 설정 마법사가 제공됩니다.
+ 
+ 마음대로 원하는 스타일의 터미널 프롬프트를 구성하세요.
+
+
+ ![configuration](doc/configuration-wizard.gif)
+##
 
  **Q:** 터미널의 폰트가 적용되지 않습니다. 어떻게 설정하나요? 
 
