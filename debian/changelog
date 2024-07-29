@@ -1,5 +1,11 @@
 hamonikr-zsh (2.4.1) unstable; urgency=low
 
+  * Change prompt style
+
+ -- HamoniKR <pkg@hamonikr.org>  Mon, 29 Jul 2024 10:47:50 +0900
+
+hamonikr-zsh (2.4.1) unstable; urgency=low
+
   * Release for HamoniKR paektu
 
  -- HamoniKR <pkg@hamonikr.org>  Sun, 28 Jul 2024 23:58:24 +0900
