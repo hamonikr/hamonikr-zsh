@@ -1,3 +1,10 @@
+hamonikr-zsh (2.4.7) paektu; urgency=medium
+
+  [Kevin Kim]
+  * Removed duplicated terminal profile dconf
+
+ -- HamoniKR <pkg@hamonikr.org>  Sun, 11 Aug 2024 06:49:20 +0900
+
 hamonikr-zsh (2.4.6) paektu; urgency=medium
 
   [Kevin Kim]
