@@ -1,3 +1,10 @@
+hamonikr-zsh (2.4.8) paektu; urgency=medium
+
+  [Kevin Kim]
+  * Include Meslo Nerd fonts
+
+ -- HamoniKR <pkg@hamonikr.org>  Sun, 11 Aug 2024 14:01:51 +0900
+
 hamonikr-zsh (2.4.7) paektu; urgency=medium
 
   [Kevin Kim]
